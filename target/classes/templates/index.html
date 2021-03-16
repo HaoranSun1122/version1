@@ -14,7 +14,7 @@
 			margin: 0 auto;
 		}
 	</style>
-	<title>首页</title>
+	<title>Index</title>
 </head>
 <body>
 <span th:replace="/common/head2 :: header"></span>
@@ -28,24 +28,24 @@
 			<div id="D1pic1" class="fPic">
 				<div class="fcon">
 					<a ><img src="/moban/images/lun1.jpg" /></a>
-					<span class="shadow"><a >九寨沟7日游</a></span>
+					<span class="shadow"><a >HAS YOUR TRIP BEEN POSTPONED?</a></span>
 				</div>
 				<div class="fcon">
 					<a ><img src="/moban/images/lun2.jpg" /></a>
-					<span class="shadow"><a >狂欢泼水节</a></span>
+					<span class="shadow"><a >MAXIMUM SAVINGS</a></span>
 				</div>
 				<div class="fcon">
 					<a ><img src="/moban/images/lun3.jpg" /></a>
-					<span class="shadow"><a >当地玩乐</a></span>
+					<span class="shadow"><a >TRANSPARENT PRICING</a></span>
 				</div>
 				<div class="fcon">
 					<a ><img src="/moban/images/lun4.jpg" /></a>
-					<span class="shadow"><a >精选错峰游</a></span>
+					<span class="shadow"><a >YOUR PARKING WHENEVER YOU WANT</a></span>
 				</div>
-				<div class="fcon">
-					<a><img src="/moban/images/lun5.jpg" /></a>
-					<span class="shadow"><a >环球大赏世界海岛</a></span>
-				</div>
+<!--				<div class="fcon">-->
+<!--					<a><img src="/moban/images/lun5.jpg" /></a>-->
+<!--					<span class="shadow"><a >环球大赏世界海岛</a></span>-->
+<!--				</div>-->
 			</div>
 
 			<div class="fbg">
@@ -54,12 +54,12 @@
 					<a href="javascript:void(0)"><i>2</i></a>
 					<a href="javascript:void(0)"><i>3</i></a>
 					<a href="javascript:void(0)"><i>4</i></a>
-					<a href="javascript:void(0)"><i>5</i></a>
+<!--					<a href="javascript:void(0)"><i>5</i></a>-->
 				</div>
 			</div>
 		</div>
 		<div class="help fr">
-			<h2>最新公告</h2>
+			<h2>New Announcement</h2>
 			<ul>
 				<li th:each="notice,noticeStat : ${noticeList}">
 				<a th:href="@{'/notice/notice-detail?id='+${notice.id}}"><span th:text="${notice.title}"></span>

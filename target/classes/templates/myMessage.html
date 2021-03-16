@@ -5,7 +5,7 @@
     <link rel="stylesheet" th:href="@{/moban/css/index.css}"/>
     <link rel="stylesheet" th:href="@{/moban/css/table.css}"/>
 	<script th:src="@{/moban/js/main.js}"></script>
-	<title>我的留言</title>
+	<title>my message</title>
 </head>
 <style>
 	.help-main p {
@@ -18,24 +18,24 @@
 
 <div class="help-wrap">
 	<div class="container clearfix">
-		<div class="bread">当前位置：
-			<a href="#">首页</a> >
-			<a href="#">留言管理</a> >
-			<a href="#">我的留言</a>
+		<div class="bread">current location：
+			<a href="#">Home</a> >
+			<a href="#">Message management</a> >
+			<a href="#">my message</a>
 		</div>
 		<span th:replace="/common/userinfo :: userer"></span>
 		<div class="help-r fr">
-			<div class="help-item-title">留言板</div>
+			<div class="help-item-title">message board</div>
 			<div class="help-main">
 				<table class="table table-hover">
 				<thead>
 					<tr >
-			        <th>留言内容</th>
-			        <th>留言时间</th>
-			        <th>管理员回复</th>
-			        <th>回复人</th>
-			        <th>回复时间</th>
-			        <th>操作</th>
+			        <th>Message content</th>
+			        <th>Message Time</th>
+			        <th>Administrator reply</th>
+			        <th>Responder</th>
+			        <th>Response Time</th>
+			        <th>operating</th>
 			      </tr>
 			      <tr>
 			        
@@ -48,17 +48,17 @@
 				      	<span th:if="${message.answerDate != null}" th:text="${#calendars.format(message.answerDate,'yyyy-MM-dd')}"></span>
 				      </td>
 				      <td>
-				      	<a th:href="@{'/message/delMsg?id='+${message.id}}">删除</a>
+				      	<a th:href="@{'/message/delMsg?id='+${message.id}}">Delete</a>
 				      </td>
 			        </tr>
 				</tbody>
 			</table>
 			
-			</div><div class="help-item-title">我要留言</div>
+			</div><div class="help-item-title">I want to leave a message</div>
 			<div class="help-main">
 				<form action="/message/message-save" method="post">
 					<p><textarea rows="4" cols="150" name="content"></textarea></p>
-					<input style="float: right;" class="save" type="submit" value="留言"/>
+					<input style="float: right;" class="save" type="submit" value="message to admin"/>
 				</form>
 			</div>
 		</div>

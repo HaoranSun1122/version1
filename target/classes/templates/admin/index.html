@@ -1,33 +1,33 @@
 ﻿<!DOCTYPE HTML>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
-<head th:include="/common/head :: commonHead('后台管理系统v1.0')">
+<head th:include="/common/head :: commonHead('Smart Parking Management System v1.0')">
 </head>
 <body>
 <header class="navbar-wrapper">
 	<div class="navbar navbar-fixed-top">
-		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">后台管理系统</a> 
+		<div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">Smart Parking Management System</a>
 			<span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span> 
 			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
 		<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
 			<ul class="cl">
-				<li> <font color="white"><span id="dt"></span>&nbsp;&nbsp;&nbsp;</font></li>
+<!--				<li> <font color="white"><span id="dt"></span>&nbsp;&nbsp;&nbsp;</font></li>-->
 				<li class="dropDown dropDown_hover">
 					<a href="#" class="dropDown_A" >
 					<input th:value="${session.LogAdmin.id}" type="hidden" id="adminId"/>
 					<span th:text="${session.LogAdmin.name}"></span> <i class="Hui-iconfont">&#xe6d5;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
-						<li><a href="javascript:;" onClick="change_password('修改信息','/admin/change-info','600','270')">修改信息</a></li>
-						<li><a href="/admin/logout">退出</a></li>
+						<li><a href="javascript:;" onClick="change_password('Modify Information','/admin/change-info','600','270')">Modify the information</a></li>
+						<li><a href="/admin/logout">Logout</a></li>
 				</ul>
 			</li>
 				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
-						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
-						<li><a href="javascript:;" data-val="blue" title="蓝色">蓝色</a></li>
-						<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
-						<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
-						<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
-						<li><a href="javascript:;" data-val="orange" title="橙色">橙色</a></li>
+						<li><a href="javascript:;" data-val="default" title="默认（黑色）">Default（Black）</a></li>
+						<li><a href="javascript:;" data-val="blue" title="蓝色">Blue</a></li>
+						<li><a href="javascript:;" data-val="green" title="绿色">Green</a></li>
+						<li><a href="javascript:;" data-val="red" title="红色">Red</a></li>
+						<li><a href="javascript:;" data-val="yellow" title="黄色">Yellow</a></li>
+						<li><a href="javascript:;" data-val="orange" title="橙色">Orange</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -38,52 +38,52 @@
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
 		<dl id="menu-notice">
-			<dt><i class="Hui-iconfont">&#xe622;</i> 信息发布管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe622;</i> Information Release Management<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/admin/notice-list" data-title="公告管理" href="javascript:;">公告管理</a></li>
+					<li><a data-href="/admin/notice-list" data-title="Announcement Management" href="javascript:;">Announcement Management</a></li>
 			</ul>
 		</dd>
 	</dl>
 	<dl id="menu-car">
-			<dt><i class="Hui-iconfont">&#xe669;</i> 车位管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe669;</i> Car parking management<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/admin/car-list" data-title="车位列表" href="javascript:;">车位列表</a></li>
+					<li><a data-href="/admin/car-list" data-title="Parking space list" href="javascript:;">Parking space list</a></li>
 			</ul>
 		</dd>
 	</dl>
 	<dl id="menu-order">
-			<dt><i class="Hui-iconfont">&#xe687;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe687;</i> Order Management<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/admin/order-list" data-title="订单列表" href="javascript:;">订单列表</a></li>
+					<li><a data-href="/admin/order-list" data-title="Order List" href="javascript:;">Order List</a></li>
 			</ul>
 		</dd>
 	</dl>
 	<dl id="menu-order">
-			<dt><i class="Hui-iconfont">&#xe6b5;</i> 积分管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe6b5;</i> Point Management<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/admin/point-list" data-title="积分排行" href="javascript:;">积分排行</a></li>
+					<li><a data-href="/admin/point-list" data-title="Points Ranking" href="javascript:;">Points Ranking</a></li>
 			</ul>
 		</dd>
 	</dl>
 		<dl id="menu-message">
-			<dt><i class="Hui-iconfont">&#xe68a;</i> 投诉建议管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dt><i class="Hui-iconfont">&#xe68a;</i> Complaint Suggestion Management<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="/admin/message-list" data-title="留言列表" href="javascript:;">留言列表</a></li>
+					<li><a data-href="/admin/message-list" data-title="Message List" href="javascript:;">Message List</a></li>
 			</ul>
 		</dd>
 	</dl>
 	
 	<dl id="menu-admin">
-		<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+		<dt><i class="Hui-iconfont">&#xe62e;</i> System Administration<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 		<dd>
 			<ul>
-				<li><a data-href="/admin/admin-list" data-title="管理员管理" href="javascript:void(0)">管理员列表</a></li>
-				<li><a data-href="/admin/user-list" data-title="用户管理" href="javascript:void(0)">用户列表</a></li>
+				<li><a data-href="/admin/admin-list" data-title="Administrator Management" href="javascript:void(0)">Administrator List</a></li>
+				<li><a data-href="/admin/user-list" data-title="User Management" href="javascript:void(0)">User List</a></li>
 			</ul>
 		</dd>
 		</dl>
@@ -95,7 +95,7 @@
 		<div class="Hui-tabNav-wp">
 			<ul id="min_title_list" class="acrossTab cl">
 				<li class="active">
-					<span title="我的桌面" data-href="/welcome">我的桌面</span>
+					<span title="My Dashboard" data-href="/welcome">My Dashboard</span>
 					<em></em></li>
 		</ul>
 	</div>
@@ -111,8 +111,8 @@
 
 <div class="contextMenu" id="Huiadminmenu">
 	<ul>
-		<li id="closethis">关闭当前 </li>
-		<li id="closeall">关闭全部 </li>
+		<li id="closethis">Close current </li>
+		<li id="closeall">Close all </li>
 </ul>
 </div>
 <!-- 引入公共js -->

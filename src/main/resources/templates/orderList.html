@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/moban/css/table.css}"/>
 	<script th:src="@{/moban/js/jquery-1.11.2.min.js}"></script>
 	<script th:src="@{/moban/js/main.js}"></script>
-	<title>我的订单</title>
+	<title>My Order</title>
 </head>
 <style>
 	.help-main p {
@@ -19,26 +19,26 @@
 
 <div class="help-wrap">
 	<div class="container clearfix">
-		<div class="bread">当前位置：
-			<a href="#">首页</a> >
-			<a href="#">订单管理</a> >
-			<a href="#">我的订单</a>
+		<div class="bread">current location：
+			<a href="#">Home</a> >
+			<a href="#">Order management</a> >
+			<a href="#">My Order</a>
 		</div>
 		<span th:replace="/common/userinfo :: userer"></span>
 		<div class="help-r fr">
-			<div class="help-item-title">已买车票</div>
+			<div class="help-item-title">Tickets bought</div>
 			<div class="help-main">
 				<table class="table table-hover" th:if="${orderList}">
 				<thead>
 					<tr >
-			        <th>订单编号</th>
-			        <th>下单时间</th>
-			        <th>车牌号</th>
-			        <th>车位编号</th>
-			        <th>车位价格</th>
-			        <th>应付金额</th>
-			        <th>状态</th>
-			        <th>操作</th>
+			        <th>Order number</th>
+			        <th>order time</th>
+			        <th>number plate</th>
+			        <th>Parking space number</th>
+			        <th>Parking price</th>
+			        <th>Amounts payable</th>
+			        <th>status</th>
+			        <th>operating</th>
 			      </tr>
 			      <tr>
 			        
@@ -50,12 +50,12 @@
 				      <td th:text="${order.price}"></td>
 				      <td th:text="${order.total}"></td>
 				      <td>
-				      	<span th:if="${order.status==0}" style="color: red">待付款</span>
-				      	<span th:if="${order.status==1}" style="color: green;">订单完成</span>
+				      	<span th:if="${order.status==0}" style="color: red">Pending payment</span>
+				      	<span th:if="${order.status==1}" style="color: green;">Order completed</span>
 				      </td>
 				      <td>
-				      	<a th:if="${order.status==0}"  th:href="@{'/order/jiesuan?id='+${order.id}}">结算</a>
-				      	<a th:if="${order.status==1}"  th:href="@{'/order/jiesuan?id='+${order.id}}">删除</a>
+				      	<a th:if="${order.status==0}"  th:href="@{'/order/jiesuan?id='+${order.id}}">Settlement</a>
+				      	<a th:if="${order.status==1}"  th:href="@{'/order/jiesuan?id='+${order.id}}">delete</a>
 				      </td>
 			        </tr>
 				</tbody>

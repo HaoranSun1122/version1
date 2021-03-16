@@ -1,30 +1,30 @@
 ﻿<!DOCTYPE HTML>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
-<head th:include="/common/head :: commonHead('管理员列表')">
+<head th:include="/common/head :: commonHead('Administrator List')">
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 管理员列表 
-<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i id="shuaxin" class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> Home <span class="c-gray en">&gt;</span> System Administration <span class="c-gray en">&gt;</span> Administrator List
+<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="Refresh" ><i id="shuaxin" class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c">
 	<form action="/admin/findAdminByName">
-		<input type="text" th:value="${nameTmp}" class="input-text" style="width:250px" placeholder="输入管理员名称" id="" name="nameTmp" />
-		<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+		<input type="text" th:value="${nameTmp}" class="input-text" style="width:250px" placeholder="Enter the administrator name" id="" name="nameTmp" />
+		<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> Search users</button>
 	</form>
 	</div>
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
-	<a href="javascript:;" onclick="admin_add('添加管理员','/admin/admin-add','800','300')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加管理员</a></span> <span class="r">共有数据：<strong th:text="${adminNum}"></strong> 条</span> </div>
+	<a href="javascript:;" onclick="admin_add('Add Administrator','/admin/admin-add','800','300')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> Add Administrator</a></span> <span class="r">共有数据：<strong th:text="${adminNum}"></strong> 条</span> </div>
 	<table class="table table-border table-bordered table-bg">
 		<thead>
 			<tr>
-				<th scope="col" colspan="9">管理员列表</th>
+				<th scope="col" colspan="9">Administrator List</th>
 			</tr>
 			<tr class="text-c">
-				<th width="45">序号</th>
-				<th width="150">管理员名称</th>
-				<th width="150">密码</th>
-				<th width="100">注册时间</th>
-				<th width="100">操作</th>
+				<th width="45">Serial number</th>
+				<th width="150">Administrator Name</th>
+				<th width="150">Password</th>
+				<th width="100">Registration Time</th>
+				<th width="100">Operation</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,7 +37,7 @@
 				<td th:text="${admin.password}"></td>
 				<td th:text="${#calendars.format(admin.createDate,'yyyy-MM-dd')}"></td>
 				<td class="td-manage">
-				<a title="删除" href="javascript:;" onclick="admin_del(this)"
+				<a title="Delete" href="javascript:;" onclick="admin_del(this)"
 				class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
 				</td>
 			</tr>
@@ -63,7 +63,7 @@ function admin_add(title,url,w,h){
 }
 /*管理员-删除*/
 function admin_del(obj){
-	layer.confirm('确认要删除吗？',function(index){
+	layer.confirm('Confirm to delete?',function(index){
 		var adminId = $(obj).parents("tr").find(".inp").val();
 		$.ajax({
 			type: 'POST',
@@ -73,9 +73,9 @@ function admin_del(obj){
 			success: function(data){
 				if(data.res==0){
 					$(obj).parents("tr").remove();
-					layer.msg('已删除!',{icon:1,time:1000});
+					layer.msg('Deleted!',{icon:1,time:1000});
 				}else{
-					layer.msg('操作失败!',{icon: 2,time:1000});
+					layer.msg('Operation failed!',{icon: 2,time:1000});
 				}
 			}
 		});		

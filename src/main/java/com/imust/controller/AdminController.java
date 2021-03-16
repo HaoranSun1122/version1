@@ -51,7 +51,7 @@ public class AdminController {
 			session.setAttribute("LogAdmin", admin);
 			return "admin/index";
 		}else {
-			model.addAttribute("msg", "用户名或密码错误");
+			model.addAttribute("msg", "Username or password is incorrect!");
 			return "admin/login";
 		}
 	}
