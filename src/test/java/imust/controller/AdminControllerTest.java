@@ -95,7 +95,12 @@ public void testLogout() throws Exception {
 
 /** 
 * 
-* Method: getAllAdmin(Model model) 
+* Method: getAllAdmin(Model model)
+ *
+ *
+ *
+ *
+ *
 * 
 */ 
 @Test

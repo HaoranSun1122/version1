@@ -29,10 +29,10 @@ public class UserController {
 				session.setAttribute("LogUser", user);
 				return "redirect:/index";
 			}else {
-				model.addAttribute("msg", "该用户已被停用");
+				model.addAttribute("msg", "The user has been disabled");
 			}
 		}else {
-			model.addAttribute("msg", "用户名或密码错误");
+			model.addAttribute("msg", "wrong user name or password");
 		}
 		return "join";
 	}
@@ -80,7 +80,7 @@ public class UserController {
 				return "redirect:/user/logout";
 			}
 		}else {
-			model.addAttribute("usermsg","原密码错误");
+			model.addAttribute("usermsg","The original password is wrong");
 		}
 		return "password";
 	}
